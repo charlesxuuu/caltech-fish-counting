@@ -16,9 +16,18 @@ python get_tiny_dataset.py --frames_file_path /home/sstathat/Fish/frames/raw \
                            --metadata_file_path /home/sstathat/Fish/metadata \
                            --metadata_tiny_file_path /home/sstathat/Fish/metadata-tiny \
                            --tiny_dataset_file_path /home/sstathat/Fish/tiny_dataset (OPTIONAL)
+
+chix:
+
+python get_tiny_dataset.py --frames_file_path d:/sonar/data/caltech-data \
+                           --frames_tiny_file_path d:/sonar/data/caltech-tiny-data \
+                           --annotation_file_path d:/sonar/data/caltech-mot-annotations \
+                           --annotation_tiny_file_path d:/sonar/data/caltech-tiny-mot-annotations \
+                           --metadata_file_path d:/sonar/data/caltech-metadata \
+                           --metadata_tiny_file_path d:/sonar/data/caltech-tiny-metadata \
+                           --tiny_dataset_file_path d:/sonar/data/tiny_dataset (OPTIONAL)
 '''
 import os
-import shutil
 import numpy as np
 import json
 import argparse
@@ -75,6 +84,7 @@ def get_files ( directory, sub_dir ):
     # sort files by file number in ascending order
     files.sort ( key = lambda x: x[1] )
 
+
     # return list of only full filenames
     return [item[0] for item in files]
 
@@ -94,7 +104,7 @@ def check_dir_matches ( annotations_list, frames_dirs ):
         af_names.add ( name );
 
     frame_names = set()
-    for ff in dirs:
+    for ff in frames_dirs:
         name = os.path.basename ( ff );
         frame_names.add ( name );
 
