@@ -4,6 +4,8 @@ import os
 import matplotlib.pyplot as plt
 import shutil
 
+#https://medium.com/red-buffer/converting-a-custom-dataset-from-coco-format-to-yolo-format-6d98a4fd43fc
+
 input_path = "D:\sonar\datasets\caltech-data\kenai-train"
 output_path = "D:\sonar\datasets\caltech-yolo-data\kenai-train"
 
