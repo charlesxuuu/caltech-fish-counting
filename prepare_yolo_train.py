@@ -30,4 +30,7 @@ def load_images_from_folder(folder):
         file_names.append(filename)
         count += 1
 
-load_images_from_folder('train_images')
+if output_path != input_path:
+    load_images_from_folder('train_images')
+
+
